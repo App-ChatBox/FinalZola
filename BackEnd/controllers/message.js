@@ -66,7 +66,7 @@ const addMessage = async (req, res, next) => {
   }
 };
 const addFile = async (req, res, next) => {
-  try {
+  
     console.log("AAAAA");
     upload(req, res, async (err) => {
       if (err) {
@@ -91,9 +91,7 @@ const addFile = async (req, res, next) => {
         return res.status(200).send(data.Location);
       });
     });
-  } catch (error) {
-    next(error);
-  }
+  
 };
 const cancelMessage = async (req, res, next) => {
   try {
