@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const client = require("../helpers/connect_redis");
-const { sendSmsOTP, verifyOtp } = require("../services/phone.service");
+const { sendSmsOTP,verifOtp } = require("../services/phone.service");
 const {
   signAccessToken,
   signRefreshToken,
@@ -193,8 +193,8 @@ const sendOTP = async (req, res, next) => {
 };
 const verifyOTPSignUp = async (req, res, next) => {
   try {
-    const { phone, code } = req.body;
-    const result = await verifyOtp(phone, code);
+    const  {phone,code} = req.body;
+    const result = await verifOtp(phone, code);
     console.log(result);
     if (result) {
       res.status(200).send("Check code successfully");

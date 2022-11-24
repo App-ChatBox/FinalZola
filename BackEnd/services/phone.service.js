@@ -12,11 +12,12 @@ const client = require("twilio")(accountSid, authToken);
  * @param phone
  * @param messageSuccess
  */
+
 const sendSmsOTP = async (phone) => {
   try {
-    const verification = await client.verify
+    const verification = await client.verify.v2
       .services(serviceId)
-      .verifications.create({ to: `+84${phone}`, channel: "sms" });
+      .verifications.create({ to: `+84${phone}`, channel: "sms" })
     if (verification) return true;
     else return false;
   } catch (error) {
@@ -26,12 +27,10 @@ const sendSmsOTP = async (phone) => {
 
 const verifyOtp = async (phone, code) => {
   try {
-    // eslint-disable-next-line camelcase
-    const verification_check = await client.verify
+    const verification_check = await client.verify.v2
       .services(serviceId)
-      .verificationChecks.create({ to: `+84${phone}`, code: code });
-
-    console.log(verification_check);
+      .verificationChecks
+      .create({to:`+84${phone}`, code:code})
     if (verification_check.valid) {
       return true;
     } else {
