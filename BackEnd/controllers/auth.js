@@ -174,6 +174,7 @@ const sendOTP = async (req, res, next) => {
   try {
     const { phone } = req.body;
     const result = await sendSmsOTP(phone);
+    console.log(sendSmsOTP(phone));
     if (result !== true) {
       res.status(500).json([
         {

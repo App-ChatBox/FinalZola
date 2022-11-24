@@ -89,7 +89,7 @@ const FormAddGroup = (props) => {
           phone: event.target.value,
         });
         // console.log(userByPhone.data.users._id);
-        if (userByPhone.status === 200) {
+        if (userByPhone.status === 200 ) {
           setResultUser(true);
           setUser(userByPhone.data.users);
 
