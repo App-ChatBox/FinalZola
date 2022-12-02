@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   req.io = io;
   next();
 });
-require("./socket")(io);
+require("../socket")(io);
 app.use("/", IndexRouter);
 
 // Catch 404 Errors and forward them to error handler

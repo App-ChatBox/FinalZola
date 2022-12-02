@@ -1,7 +1,8 @@
 const redis = require("redis");
 const client = redis.createClient({
-  port: 6379,
-  host: "127.0.0.1",
+  url:"redis://redis-17678.c1.ap-southeast-1-1.ec2.cloud.redislabs.com:17678",
+  auth_user:"Aluwas",
+  auth_pass:"Anhviet6jklz!"
 });
 client.ping((err, pong) => {
   console.log(pong);

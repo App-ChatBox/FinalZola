@@ -1,5 +1,5 @@
-const User = require("./models/User");
-const Room = require("./models/Rooms");
+const User = require("./src/models/User");
+const Room = require("./src/models/Rooms");
 const { ObjectId } = require("mongodb");
 module.exports = async (io) => {
   await io.on("connection", (socket) => {
