@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 //let token = localStorage.getItem("token");
 const axiosClient = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://back-end-vietanh6jk-appchatfinalzola.vercel.app/",
   headers: {
     "Content-Type": "application/json",
     //authorization: `${token}`,
